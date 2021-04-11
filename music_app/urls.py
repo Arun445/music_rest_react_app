@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from api import urls as api_urls
+from frontend import urls as frontend_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(api_urls), name='api')
+    path('api/', include(api_urls)),
+    path('', include(frontend_urls))
 
 ]
